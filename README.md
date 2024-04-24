@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+###ABOUT PROJECT
+->This is basically a weather forecast app which gets the city name in input and displays its weather information
+->For weather information , i have used (https://weatherapi-com.p.rapidapi.com/current.json?q=Delhi,India`) this weather Api.

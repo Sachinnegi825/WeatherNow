@@ -1,38 +1,112 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.App > h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Main Container  Css*/
+.search_box {
+  margin-top: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search_box input {
+  padding: 5px 0;
+  border-right: none;
+  border: 1px solid grey;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+  background: #4285f4;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn:hover {
+  border: 1px solid #4285f4;
+  background: white;
+  color: #4285f4;
+  cursor: pointer;
+}
+
+/* Weather_card Css */
+.weather_card {
+  display: flex;
+  margin: 50px auto;
+  width: 30%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  background-color: #00008b;
+  color: white;
+  padding: 10px;
+}
+
+.weather_card > img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather_details {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+
+.weather_details > p {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 400px) {
+  .weather_card {
+    display: flex;
+    margin: auto;
+    width: 90%;
   }
-  to {
+}
+
+/* Loading Css */
+.loading-top {
+  border-radius: 50%;
+  margin: 50px auto;
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  animation: rotateLoading 0.4s linear infinite;
+}
+
+@keyframes rotateLoading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
     transform: rotate(360deg);
   }
+}
+
+/* Error Page Css */
+
+.errorpage {
+  border: 2px solid grey;
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
 }
