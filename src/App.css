@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: aliceblue;
+.App {
+  height: 100vh;
+  padding: 10px;
 }
 
 .App > h1 {
@@ -14,15 +15,21 @@ body {
 }
 
 /* Main Container  Css*/
+
 .search_box {
-  margin-top: 20px;
+  margin: 35px;
   text-align: center;
 }
 
 .search_box input {
+  width: 200px;
   padding: 5px 0;
   border-right: none;
   border: 1px solid grey;
+}
+
+.search_box p {
+  margin: 20px;
 }
 
 .btn {
@@ -44,15 +51,15 @@ body {
 /* Weather_card Css */
 .weather_card {
   display: flex;
-  margin: 50px auto;
-  width: 30%;
+  margin: auto;
+  width: 300px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid grey;
   border-radius: 5px;
-  box-shadow: 0 0 5px grey;
-  background-color: #00008b;
+  box-shadow: 4px 3px 5px grey;
+  background-color: #05052c;
   color: white;
   padding: 10px;
 }
@@ -63,22 +70,17 @@ body {
 }
 
 .weather_details {
-  display: flex;
-  justify-content: space-around;
   width: 100%;
-  text-align: center;
 }
 
 .weather_details > p {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 400px) {
   .weather_card {
     display: flex;
-    margin: auto;
-    width: 90%;
   }
 }
 
@@ -109,4 +111,28 @@ body {
   width: 300px;
   margin: 50px auto;
   text-align: center;
+}
+
+/* Toggle Btn  (Dark/light)*/
+.toggle_btn {
+  float: right;
+  border: 1px solid grey;
+  padding: 3px 5px;
+  width: 60px;
+  height: 30px;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 30px;
+  background: grey;
+  cursor: pointer;
+}
+
+.toggle_btn span {
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 25px;
+  height: 100%;
+  display: block;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  background: white;
 }

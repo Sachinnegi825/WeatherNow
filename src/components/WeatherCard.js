@@ -1,10 +1,13 @@
 import React from "react";
 
-const WeatherCard = ({ data, city }) => {
+const WeatherCard = ({ data, location }) => {
   return (
     <div className="weather_card">
-      <h1>{city}</h1>
+      <h1>
+        {location?.name}, {location?.country}
+      </h1>
       <img src={data?.condition?.icon} alt="" />
+      <p>{location?.localtime}</p>
       <div className="weather_details">
         <p>
           <span>Temp</span>

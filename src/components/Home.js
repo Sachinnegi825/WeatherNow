@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import WeatherCard from "./WeatherCard";
 import Loading from "./Loading";
 import ErrorPage from "./ErrorPage";
 
 const Home = () => {
-  const [cityName, setCityName] = useState("");
+  const [location, setLocation] = useState("");
   const [loading, setLoading] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(false);
@@ -12,7 +12,7 @@ const Home = () => {
 
   const handleWeather = async () => {
     setLoading(true);
-    const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${cityName}`;
+    const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`;
     const options = {
       method: "GET",
       headers: {
@@ -26,7 +26,7 @@ const Home = () => {
       const data = await response.json();
       if (!data?.error) {
         setWeatherData(data?.current);
-        setCity(data?.location?.name + "," + data?.location?.country);
+        setLocation(data?.location);
         console.log("data", data);
         setLoading(false);
       } else {
@@ -41,11 +41,15 @@ const Home = () => {
   return (
     <>
       <div className="search_box">
+        <p>
+          Curious about the weather in your area? Enter your city name and click
+          'Search' to get the latest forecast!
+        </p>
         <input
           type="text"
-          value={cityName}
+          value={city}
           placeholder="Enter City Name..."
-          onChange={(e) => setCityName(e.target.value)}
+          onChange={(e) => setCity(e.target.value)}
         />
         <button onClick={() => handleWeather()} className="btn">
           Search
@@ -57,9 +61,7 @@ const Home = () => {
       ) : error ? (
         <ErrorPage />
       ) : (
-        weatherData && (
-          <WeatherCard data={weatherData} city={city.toUpperCase()} />
-        )
+        weatherData && <WeatherCard data={weatherData} location={location} />
       )}
     </>
   );
