@@ -72,3 +72,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ###ABOUT PROJECT
 ->This is basically a weather forecast app which gets the city name in input and displays its weather information
 ->For weather information , i have used (https://weatherapi-com.p.rapidapi.com/current.json?q=Delhi,India`) this weather Api.
+
+###How to run
+Just have to type the city name in the search box , then clcik search ,it wil lshow the current weather of that city in a box
+
+For dark and light theme,there is a button at top right,when clcik it will toggle between light and dark theme
